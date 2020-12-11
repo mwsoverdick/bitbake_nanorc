@@ -1,0 +1,32 @@
+# Nano Bitbake syntax highlighting
+syntax "bitbake" "(local\.conf|layer\.conf|\.inc|\.bb(append|class)?)$"
+
+# Override styling
+color brightcyan "_[a-z0-9_\-]+[ \:\.\+\?]*\="
+
+# Functions
+icolor brightgreen "^(python)?\s*[0-9A-Z_]+\s*\(\)"
+
+# Keywords
+color brightblue "\<(python|inherit|include|require|deltask|export|addhandler|addtask)\>"
+
+# Operators
+color green "(\{|\}|\(|\)|\;|\]|\[|`|\\|\$|<|>|!|&|\?=|\?\?=|:=|\+=|=\+|\.=|=\.|=|\|)"
+
+# Strings
+## Single Line
+color brightyellow ""(\\.|[^"])*""
+color brightyellow "'(\\.|[^'])*'"
+
+## Multi-Line
+color brightyellow start=""(\\.|[^"])*\\[[:space:]]*$" end="^(\\.|[^"])*""
+
+# In-String replacements
+icolor brightred "\$\{?[0-9A-Z_!@#$*?-]+\}?"
+icolor blue "\$\{@.+\}"
+
+# Comments
+color cyan "(^|[[:space:]])#.*$"
+
+# Trailing whitespace
+color ,green "[[:space:]]+$"
