@@ -29,4 +29,4 @@ icolor blue "\$\{@.+\}"
 color cyan "(^|[[:space:]])#.*$"
 
 # Trailing whitespace
-color ,green "[[:space:]]+$"
+color green "[[:space:]]+$"
